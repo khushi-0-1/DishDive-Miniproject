@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe App</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Dancing+Script&family=Pacifico&family=Pixelify+Sans&family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!--Start of Conferbot Script-->
+    <script type="text/javascript">
+      (function (d, s, id) {
+        var js,
+          el = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+          return;
+        }
+        js = d.createElement(s);
+        js.async = true;
+        js.src = 'https://s3.ap-south-1.amazonaws.com/conferbot.defaults/dist/v1/widget.min.js';
+        js.id = id;
+        js.charset = 'UTF-8';
+        el.parentNode.insertBefore(js, el);
+        // Initializes the widget when the script is ready
+        js.onload = function () {
+            var w = window.ConferbotWidget("65204e8bb3d7f38922a7eade", "live_chat");
+        };
+      })(document, 'script', 'conferbot-js');
+    </script>
+    <!--End of Conferbot Script-->
+      
+    <nav class="navbar">
+      <div class="navdiv">
+        <div class="logo"><img src="logooo.png" alt="" /></div>
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ourteam.html">Our Team</a></li>
+         
+          <li><a href="login.html">Login</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="title">
+      <h1>Welcome To DishDive</h1>
+      <p class="para">.....Explore <span class="auto-input"></span></p>
+    </div>
+
+    <div>
+      <video autoplay muted loop class="landing-video">
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="container">
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Type A Dish Name Here.."
+          id="user-inp"
+        />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="result"></div>
+    </div>
+    <!-- Script -->
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed(".auto-input", {
+        strings: [
+          "the art of Deliciousness",
+          "the Culinary World Online",
+          "Your Foodie Side",
+          "Foodscapes Together",
+        ],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+            margin: 0;
+        }
+
+        .container {
+            width: 600px;
+            padding: 70px;
+            border: 3px solid black;
+            border-radius: 2%;
+            background-color: white;
+            transition: transform 0.3s;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #FF4500;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #FF4500;
+            border-radius: 5px;
+            background-color: #FFEC8B;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .error {
+            color: red;
+        }
+
+        button {
+            background-color: #FF4500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #FF6347;
+        }
+
+        #confirmation {
+            display: none;
+            color: #FF4500;
+            font-weight: bold;
+        }
+
+        .centered {
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .expanded {
+            width: 800px;
+            transform: scale(2, 2);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container centered">
+        <h2>Feedback Form</h2>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="confirmation">Thank you for your feedback!</p>
+    </div>
+
+    <script>
+        const feedbackForm = document.getElementById("feedbackForm");
+        const confirmationMessage = document.getElementById("confirmation");
+
+        feedbackForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            
+            // Perform form validation
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const feedback = document.getElementById("feedback").value;
+
+            if (name === "" || email === "" || feedback === "") {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            // If all fields are filled, show a confirmation message
+            confirmationMessage.style.display = "block";
+        });
+    </script>
+</body>
+</html>
